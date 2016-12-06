@@ -4,30 +4,28 @@ import java.util.Date;
 
 /**
  * TODO
+ * Write unit tests for EVERY single class first of all
  * Change name to the app: ePassport
+ * Add ant clean install for unit tests
  */
 
 public class EPassport {
 
     private final String name;
     private final String surname;
-    private final Date birthDate;
+    private final String birthDate;
     private final Gender gender;
     private final ContactData contactData;
     private final SpecialNeeds specialNeeds;
     private final String secondSurname;
-    private final LoyaltyCard loyaltyCard; //Company code and card number
-    private final BusinessCard businessCard; //Programme name and company code (SAME AS LOYALTY CARD, THEY EXTEND FROM CARD)
-
-    public String getName() {
-        return name;
-    }
+    private final LoyaltyCard loyaltyCard;
+    private final BusinessCard businessCard;
 
     public static class Builder {
         //Required parameters
         private final String name;
         private final String surname;
-        private final Date birthDate;
+        private final String birthDate;
         private final Gender gender;
         private final ContactData contactData;
         private final SpecialNeeds specialNeeds; //Visual impairment, Hearing impairment, Wheelchair required
@@ -37,7 +35,7 @@ public class EPassport {
         private LoyaltyCard loyaltyCard = null; //Company code and card number
         private BusinessCard businessCard = null;
 
-        public Builder(String name, String surname, Date birthDate, Gender gender,
+        public Builder(String name, String surname, String birthDate, Gender gender,
                        ContactData contactData, SpecialNeeds specialNeeds) {
             this.name = name;
             this.surname = surname;
@@ -77,6 +75,42 @@ public class EPassport {
         secondSurname = builder.secondSurname;
         loyaltyCard = builder.loyaltyCard;
         businessCard = builder.businessCard;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public ContactData getContactData() {
+        return contactData;
+    }
+
+    public SpecialNeeds getSpecialNeeds() {
+        return specialNeeds;
+    }
+
+    public String getSecondSurname() {
+        return secondSurname;
+    }
+
+    public LoyaltyCard getLoyaltyCard() {
+        return loyaltyCard;
+    }
+
+    public BusinessCard getBusinessCard() {
+        return businessCard;
     }
 }
 
