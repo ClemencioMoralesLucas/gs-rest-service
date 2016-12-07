@@ -46,5 +46,4 @@ public class EmailTest {
         sameEmail.setAddress(OTHER_VALID_ADDRESS);
         assertFalse(this.email.equals(sameEmail));
     }
-
 }

@@ -15,14 +15,7 @@ public class PasswordValidatorTest {
 
     @Before
     public void setUp() throws Exception {
-        laxPasswordValidator = new LaxPasswordValidator();
-        rigorousPasswordValidator = new RigorousPasswordValidator();
+//        laxPasswordValidator = new LaxPasswordValidator();
+//        rigorousPasswordValidator = new RigorousPasswordValidator();
     }
-
-    @Test
-    public void validate() throws Exception {
-        assertFalse(laxPasswordValidator.validate(""));
-        //TODO viene aqui test reusable, pillar contraseñas de entrada de aqui y cambiar por nombres Metal Gear https://www.mkyong.com/regular-expressions/how-to-validate-password-with-regular-expression/
-    }
-
 }
