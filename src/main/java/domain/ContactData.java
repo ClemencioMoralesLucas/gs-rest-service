@@ -28,7 +28,7 @@ public class ContactData {
         return email;
     }
 
-    private void setEmail(final Email email) {
+    public void setEmail(final Email email) {
         this.email = email;
     }
 
