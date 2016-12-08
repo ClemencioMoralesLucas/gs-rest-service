@@ -4,7 +4,6 @@ import java.util.Date;
 
 /**
  * TODO
- * Write unit tests for EVERY single class first of all
  * Change name to the app: ePassport
  * Add ant clean install for unit tests
  */
