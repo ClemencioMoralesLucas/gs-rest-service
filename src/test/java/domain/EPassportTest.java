@@ -16,21 +16,21 @@ import static org.junit.Assert.assertNotEquals;
  */
 public class EPassportTest {
 
-    public static final String NAME_CLEMEN = "Clemencio";
-    public static final String SURNAME_CLEMEN = "Morales";
-    public static final String BIRTHDATE_CLEMEN = "17/02/1991";
-
     public static final String NAME_SNAKE = "Solid";
     public static final String SURNAME_SNAKE = "Snake";
     public static final String SECOND_SURNAME_SNAKE = "Big Boss";
-    public static final String BIRTHDATE_SNAKE = "11/05/1961";
+    public static final String BIRTHDATE_SNAKE = "17/02/1991";
+
+    public static final String NAME_LIQUID = "Liquid";
+    public static final String SURNAME_LIQUID = "Snake";
+    public static final String BIRTHDATE_LIQUID = "27/11/1997";
 
     private EPassport ePassportBasic;
     private EPassport ePassportFull;
 
     @Before
     public void setUp() throws Exception {
-        ePassportBasic = new EPassport.Builder(NAME_CLEMEN, SURNAME_CLEMEN, BIRTHDATE_CLEMEN, Gender.MALE, null, SpecialNeeds.NONE)
+        ePassportBasic = new EPassport.Builder(NAME_LIQUID, SURNAME_LIQUID, BIRTHDATE_LIQUID, Gender.MALE, null, SpecialNeeds.NONE)
                 .build();
         ePassportFull = new EPassport.Builder(NAME_SNAKE, SURNAME_SNAKE, BIRTHDATE_SNAKE, Gender.MALE, null, SpecialNeeds.NONE)
                 .secondSurname(SECOND_SURNAME_SNAKE).loyaltyCard(null).businessCard(null).build();
@@ -38,15 +38,15 @@ public class EPassportTest {
 
     @Test
     public void testEPassportAttributes() throws ParseException {
-        assertEquals(ePassportBasic.getName(), NAME_CLEMEN);
+        assertEquals(ePassportBasic.getName(), NAME_LIQUID);
 
         ePassportBasic.getBirthDate();
         ePassportFull.getBirthDate();
         assertNotEquals(ePassportBasic.getBirthDate(), ePassportFull.getBirthDate());
-//        assertEquals(ePassportBasic.getSurname(), SURNAME_CLEMEN);
-//        assertEquals(ePassportBasic.getSurname(), SURNAME_CLEMEN);
-//        assertEquals(ePassportBasic.getSurname(), SURNAME_CLEMEN);
-//        assertEquals(ePassportBasic.getSurname(), SURNAME_CLEMEN);
+//        assertEquals(ePassportBasic.getSurname(), SURNAME_LIQUID);
+//        assertEquals(ePassportBasic.getSurname(), SURNAME_LIQUID);
+//        assertEquals(ePassportBasic.getSurname(), SURNAME_LIQUID);
+//        assertEquals(ePassportBasic.getSurname(), SURNAME_LIQUID);
     }
 
     private Date createDate(String date) throws ParseException {

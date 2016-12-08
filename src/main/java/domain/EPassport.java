@@ -1,14 +1,15 @@
 package domain;
 
-import java.util.Date;
-
 /**
  * TODO
  * Change name to the app: ePassport
+ * Add PMD
+ * Add SonarQube or similar
  */
 
 public class EPassport {
 
+//    private final Identification identification; //TODO Abstract class that contains String id. Subclasses: NIE, NIF, PASSPORT...
     private final String name;
     private final String surname;
     private final String birthDate;
@@ -111,4 +112,3 @@ public class EPassport {
         return businessCard;
     }
 }
-
