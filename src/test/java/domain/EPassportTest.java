@@ -16,23 +16,29 @@ import static org.junit.Assert.assertNotEquals;
  */
 public class EPassportTest {
 
-    public static final String NAME_SNAKE = "Solid";
-    public static final String SURNAME_SNAKE = "Snake";
-    public static final String SECOND_SURNAME_SNAKE = "Big Boss";
-    public static final String BIRTHDATE_SNAKE = "17/02/1991";
+    private Identification identificationSnake;
+    private static final String NAME_SNAKE = "Solid";
+    private static final String SURNAME_SNAKE = "Snake";
+    private static final String SECOND_SURNAME_SNAKE = "Big Boss";
+    private static final String BIRTHDATE_SNAKE = "17/02/1991";
+    private final String DNI_SNAKE = "13755305V";
 
-    public static final String NAME_LIQUID = "Liquid";
-    public static final String SURNAME_LIQUID = "Snake";
-    public static final String BIRTHDATE_LIQUID = "27/11/1997";
+    private Identification identificationLiquid;
+    private static final String NAME_LIQUID = "Liquid";
+    private static final String SURNAME_LIQUID = "Snake";
+    private static final String BIRTHDATE_LIQUID = "27/11/1997";
+    private final String DNI_LIQUID = "63839734Z";
 
     private EPassport ePassportBasic;
     private EPassport ePassportFull;
 
     @Before
     public void setUp() throws Exception {
-        ePassportBasic = new EPassport.Builder(NAME_LIQUID, SURNAME_LIQUID, BIRTHDATE_LIQUID, Gender.MALE, null, SpecialNeeds.NONE)
+        identificationSnake = new Dni(DNI_SNAKE);
+        identificationLiquid = new Dni(DNI_LIQUID);
+        ePassportBasic = new EPassport.Builder(identificationLiquid, NAME_LIQUID, SURNAME_LIQUID, BIRTHDATE_LIQUID, Gender.MALE, null, SpecialNeeds.NONE)
                 .build();
-        ePassportFull = new EPassport.Builder(NAME_SNAKE, SURNAME_SNAKE, BIRTHDATE_SNAKE, Gender.MALE, null, SpecialNeeds.NONE)
+        ePassportFull = new EPassport.Builder(identificationSnake, NAME_SNAKE, SURNAME_SNAKE, BIRTHDATE_SNAKE, Gender.MALE, null, SpecialNeeds.NONE)
                 .secondSurname(SECOND_SURNAME_SNAKE).loyaltyCard(null).businessCard(null).build();
     }
 

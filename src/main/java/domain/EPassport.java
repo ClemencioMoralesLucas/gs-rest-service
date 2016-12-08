@@ -2,14 +2,15 @@ package domain;
 
 /**
  * TODO
- * Change name to the app: ePassport
+ * Test this class EXTENSIVELY
  * Add PMD
  * Add SonarQube or similar
+ * Change name to the app: ePassport
  */
 
 public class EPassport {
 
-//    private final Identification identification; //TODO Abstract class that contains String id. Subclasses: NIE, NIF, PASSPORT...
+    private final Identification identification;
     private final String name;
     private final String surname;
     private final String birthDate;
@@ -22,6 +23,7 @@ public class EPassport {
 
     public static class Builder {
         //Required parameters
+        private final Identification identification;
         private final String name;
         private final String surname;
         private final String birthDate;
@@ -34,8 +36,9 @@ public class EPassport {
         private LoyaltyCard loyaltyCard = null; //Company code and card number
         private BusinessCard businessCard = null;
 
-        public Builder(String name, String surname, String birthDate, Gender gender,
-                       ContactData contactData, SpecialNeeds specialNeeds) {
+        public Builder(Identification identification, String name, String surname, String birthDate,
+                       Gender gender, ContactData contactData, SpecialNeeds specialNeeds) {
+            this.identification = identification;
             this.name = name;
             this.surname = surname;
             this.birthDate = birthDate;
@@ -65,6 +68,7 @@ public class EPassport {
     }
 
     public EPassport(Builder builder) {
+        identification = builder.identification;
         name = builder.name;
         surname = builder.surname;
         birthDate = builder.birthDate;
@@ -74,6 +78,10 @@ public class EPassport {
         secondSurname = builder.secondSurname;
         loyaltyCard = builder.loyaltyCard;
         businessCard = builder.businessCard;
+    }
+
+    public Identification getIdentification() {
+        return identification;
     }
 
     public String getName() {
