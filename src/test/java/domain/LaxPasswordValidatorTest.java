@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 /**
  * Created by clemen on 7/12/16.
  */
-public class LaxPasswordValidatorTest {
+public class LaxPasswordValidatorTest extends PasswordValidatorTest {
 
     private static final String INVALID_PASSWORD_1 = "REVOLVER_OCELOT_VS_SOLID_SNAKE";
     private static final String INVALID_PASSWORD_2 = "Rev";
@@ -30,9 +30,6 @@ public class LaxPasswordValidatorTest {
     private static final String VALID_PASSWORD_8 = "DecoYOctopus";
     private static final String VALID_PASSWORD_9 = "Vul4nR4vn";
     private static final String VALID_PASSWORD_10 = "77777VULCAN0Raven7";
-
-    private static final String INVALID_PASSWORD_PROVIDER = "invalid-passwords";
-    private static final String VALID_PASSWORD_PROVIDER = "valid-passwords";
 
     @Test(expectedExceptions = {IllegalArgumentException.class},
             expectedExceptionsMessageRegExp = PasswordValidator.INVALID_PASSWORD,

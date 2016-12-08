@@ -8,10 +8,13 @@ import static org.junit.Assert.*;
 /**
  * Created by Clemencio Morales Lucas on 06/12/2016.
  */
-public class PasswordValidatorTest {
+public abstract class PasswordValidatorTest {
 
     PasswordValidator laxPasswordValidator;
     PasswordValidator rigorousPasswordValidator;
+
+    final String INVALID_PASSWORD_PROVIDER = "invalid-passwords";
+    final String VALID_PASSWORD_PROVIDER = "valid-passwords";
 
     @Before
     public void setUp() throws Exception {
