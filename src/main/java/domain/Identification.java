@@ -9,11 +9,7 @@ public abstract class Identification {
     public static final String INVALID_IDENTIFICATION_NUMBER = "Invalid identification number";
 
     protected Identification(final String identification){
-        if (isValid(identification)){
-            this.setIdentification(identification);
-        } else {
-            throw new IllegalArgumentException(INVALID_IDENTIFICATION_NUMBER);
-        }
+        this.setIdentification(identification);
     }
 
     public String getIdentification() {
@@ -21,7 +17,11 @@ public abstract class Identification {
     }
 
     public void setIdentification(String identification) {
-        this.identification = identification;
+        if(isValid(identification)){
+            this.identification = identification;
+        } else {
+            throw new IllegalArgumentException(INVALID_IDENTIFICATION_NUMBER);
+        }
     }
 
     @Override

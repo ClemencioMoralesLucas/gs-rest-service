@@ -43,17 +43,25 @@ public class EPassportTest {
     }
 
     @Test
-    public void testEPassportAttributes() throws ParseException {
+    public void testEPassportSimpleAttributes() throws ParseException {
         assertEquals(ePassportBasic.getName(), NAME_LIQUID);
-
-        ePassportBasic.getBirthDate();
-        ePassportFull.getBirthDate();
+        assertEquals(ePassportFull.getName(), NAME_SNAKE);
+        assertEquals(ePassportFull.getSecondSurname(), SECOND_SURNAME_SNAKE);
         assertNotEquals(ePassportBasic.getBirthDate(), ePassportFull.getBirthDate());
-//        assertEquals(ePassportBasic.getSurname(), SURNAME_LIQUID);
-//        assertEquals(ePassportBasic.getSurname(), SURNAME_LIQUID);
-//        assertEquals(ePassportBasic.getSurname(), SURNAME_LIQUID);
-//        assertEquals(ePassportBasic.getSurname(), SURNAME_LIQUID);
     }
+
+    @Test
+    public void testEqualityBetweenEPasswords() {
+        //TODO CHECK EQUALITY IN TERMS OF IDENTIFICATION OBJECT
+        //assertEquals...passport.equals.other
+
+    }
+
+//    @Test
+//    public void testEPassportWithWrongEmail() {
+//        ePassportFull = new EPassport.Builder(identificationSnake, NAME_SNAKE, SURNAME_SNAKE, BIRTHDATE_SNAKE, Gender.MALE, null, SpecialNeeds.NONE)
+//                .secondSurname(SECOND_SURNAME_SNAKE).loyaltyCard(null).businessCard(null).build();
+//    }
 
     private Date createDate(String date) throws ParseException {
         //This method can be used to create dates like createDate("17/02/1991")
