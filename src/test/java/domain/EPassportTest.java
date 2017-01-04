@@ -52,16 +52,12 @@ public class EPassportTest {
 
     @Test
     public void testEqualityBetweenEPasswords() {
-        //TODO CHECK EQUALITY IN TERMS OF IDENTIFICATION OBJECT
-        //assertEquals...passport.equals.other
-
+        assertNotEquals(ePassportBasic, ePassportFull);
+        EPassport ePassportWithSameIdentification = new EPassport.Builder(identificationSnake,
+                NAME_LIQUID, SURNAME_LIQUID, BIRTHDATE_LIQUID, Gender.MALE, null, SpecialNeeds.NONE)
+                .build();
+        assertEquals(ePassportWithSameIdentification, ePassportFull);
     }
-
-//    @Test
-//    public void testEPassportWithWrongEmail() {
-//        ePassportFull = new EPassport.Builder(identificationSnake, NAME_SNAKE, SURNAME_SNAKE, BIRTHDATE_SNAKE, Gender.MALE, null, SpecialNeeds.NONE)
-//                .secondSurname(SECOND_SURNAME_SNAKE).loyaltyCard(null).businessCard(null).build();
-//    }
 
     private Date createDate(String date) throws ParseException {
         //This method can be used to create dates like createDate("17/02/1991")

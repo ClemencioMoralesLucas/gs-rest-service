@@ -119,4 +119,19 @@ public class EPassport {
     public BusinessCard getBusinessCard() {
         return businessCard;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        EPassport ePassport = (EPassport) o;
+
+        return identification.equals(ePassport.identification);
+    }
+
+    @Override
+    public int hashCode() {
+        return identification.hashCode();
+    }
 }
